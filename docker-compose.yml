@@ -1,0 +1,14 @@
+services:
+  db:
+    image: timescale/timescaledb:latest-pg16
+    environment:
+      POSTGRES_USER: furnace
+      POSTGRES_PASSWORD: furnace
+      POSTGRES_DB: furnace
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
